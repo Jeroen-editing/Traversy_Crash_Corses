@@ -317,6 +317,28 @@ a:active {
     border-radius: 4px;
 }
 
+/*
+.my-list li:nth-child(3) {
+    background-color: darkgoldenrod;
+}
+
+.my-list li:nth-child(7) {
+    background-color: darkgoldenrod;
+}
+
+.my-list li:nth-child(11) {
+    background-color: darkgoldenrod;
+}
+*/
+
+.my-list li:nth-child(odd) {
+    background-color: darkgoldenrod;
+}
+
+.my-list li:nth-child(even) {
+    background-color: gray;
+}
+
 .my-list li:first-child {
     background: rgb(167, 25, 25);
 }
