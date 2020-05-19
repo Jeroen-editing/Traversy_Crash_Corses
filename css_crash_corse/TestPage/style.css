@@ -28,6 +28,61 @@ a:active {
     border: none;
 }
 
+a::after {
+    margin-left: 18px;
+    color: peru;
+    font-size: 14px;
+    content:  " (" attr(href) ") ";
+}
+
+.arrow {
+    margin: -12px 0 -12px 12px;
+    background: #4dbb91;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    padding: 0 12px;
+    position: relative;
+    text-decoration: none;
+}
+  
+.arrow:before, .arrow:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+  
+.arrow:before {
+    border-bottom: 15px solid #4dbb91;
+    border-left: 15px solid transparent;
+    border-top: 15px solid #4dbb91;
+    left: -15px;
+}
+  
+.arrow:after {
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #4dbb91;
+    border-top: 15px solid transparent;
+    right: -15px;
+ 
+}
+  
+.arrow:hover {
+    background: peru;
+}
+  
+.arrow:hover:before {
+    border-bottom: 15px solid peru;
+    border-top: 15px solid peru;
+}
+  
+.arrow:hover:after {
+    border-left: 15px solid peru;
+}
+
 .container {
     width: 80%;
     margin: auto;
@@ -35,6 +90,14 @@ a:active {
 
 .clr {
     clear: both;
+}
+
+p::first-letter {
+    font-size: 28px;
+    font-weight: 400;
+    margin-right: 4px;
+    color: darkred;
+    text-shadow: 1px 1px black;
 }
 
 .box-1 {
@@ -109,16 +172,13 @@ a:active {
 }
 
 .categories li {
-    margin: 0 26px 2px 0;
-    padding: 8px 0 6px 0;
+    margin: 0 26px 4px 0;
+    padding: 6px 0 4px 0;
     border-bottom: 2px dotted #333;
-    list-style-image: url('images/check-2a.png');
 }
 
 .categories li:hover {
     border-bottom: 2px dotted rgb(204, 124, 5);
-    list-style-image: url('images/check-2b.png');
-    
 }
 
 .box-4 {
@@ -293,7 +353,28 @@ a:active {
 
 .fix-me {
     position:fixed;   
-    top: 400px;  
+    top: 8px;  
+    left: 20px;
+    padding: 12px 12px 12px 0;
+}
+
+.fix-me > button {
+    padding: 6px 8px;
+    font-size: 23px;
+    letter-spacing: 1px;
+    border: 3px solid darkgoldenrod;
+    border-radius: 12px;
+    color: white;
+    background: darkslategray;
+}
+
+.fix-me > button:hover{
+    color: black;
+    background: darkolivegreen;
+}
+
+.fix-me::after {
+    content: "";
 }
 
 .my-list-box {
@@ -310,12 +391,15 @@ a:active {
 }
 
 .my-list li {
-    padding: 6px 18px 2px 12px;
+    padding: 4px 18px 0 12px;
+    margin-bottom: 2px;
     list-style: square;
     list-style-position: inside;
     color: whitesmoke;
     border: 1px solid darkslategray;
     border-radius: 4px;
+    list-style-image: url('images/check-2a.png');
+    list-style-position: outside;
 }
 
 /*
@@ -333,11 +417,13 @@ a:active {
 */
 .my-list li:nth-child(1n) {
     background-color: gray;
+    border: 1px solid burlywood;
 }
 .my-list li:nth-child(5n-8) {
     background-color: darkgoldenrod;
     color: rgb(56, 56, 56);
     font-weight: 600;
+    border: 1px solid burlywood;
 }
 .my-list li:first-child {
     background: rgb(167, 25, 25);
@@ -347,6 +433,8 @@ a:active {
     font-weight: 800;
     letter-spacing: 2px;
     color: black;
+    border: 1px solid peru;
+    list-style: none;
     /*
     text-decoration: underline;
     text-underline-offset: 6px;
@@ -360,6 +448,8 @@ a:active {
     font-weight: 800;
     letter-spacing: 2px;
     color: black;
+    border: 1px solid peru;
+    list-style: none;
     /*
     text-decoration: underline;
     text-underline-offset: 6px;
@@ -368,4 +458,5 @@ a:active {
 .my-list li:hover {
     background: darkcyan;
     border: 1px solid cadetblue;
+    list-style-image: url('images/check-2b.png');
 }
